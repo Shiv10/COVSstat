@@ -22,31 +22,31 @@ window.addEventListener("load", () =>{
         let hd = 0
         let ld = 0;
 
-        if (fever.value == 'yes'){
+        if (fever.checked){
              temp =  1
         }
 
-        if (cough.value == 'yes'){
+        if (cough.checked){
             co =  1
         }
 
-       if (tired.value == 'yes'){
+       if (tired.checked){
             f =  1
         }
 
-       if (breathing.value == 'yes'){
+       if (breathing.checked){
             br =  1
         }
 
-        if (chest.value == 'yes'){
+        if (chest.checked){
             cp =  1
         }
 
-        if (heart.value == 'yes'){
+        if (heart.checked){
             hd =  1
         }
 
-        if (lung.value == 'yes'){
+        if (lung.checked){
             ld =  1
         }
 
@@ -60,6 +60,7 @@ window.addEventListener("load", () =>{
             heartDisease: hd,
             lungDisease: ld,
         }
+        console.log(data);
 
         count = 1;
         $.ajax({
@@ -71,12 +72,15 @@ window.addEventListener("load", () =>{
                 data = data.slice(1,2)
                 console.log( data);
                 if(data == '0'){
+                    result.style.color = "#73CD71"
                     result.innerHTML = "Keep Calm, you're safe";
                 }
                 if(data == '1'){
+                    result.style.color = "#F77F4C"
                     result.innerHTML = "Stay alert, you migh be in danger";
                 }
                 if(data == '2'){
+                    result.style.color = "#B30C0B"
                     result.innerHTML = "High risk, report to authorities as soon as possible.";
                 }
 

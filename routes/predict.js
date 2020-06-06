@@ -8,6 +8,6 @@ pred.post('/', (req, res) =>{
     process.stdout.on('data', (data) => { 
         res.send(data.toString());
     });
-})
+});
 
 module.exports = pred;

@@ -1,58 +1,77 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
     <title>COVStats</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="../static/js/index.js"></script>
-</head>
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<style type="text/css">
+		/*this is just to organize the demo checkboxes*/
+        label {margin-right:20px;}
+        .checkbox input[type="checkbox"]:checked ~ label::before {
+            color: #F86767;
+        }
+	</style></head>
 <body>
-    <label for="fever">Fever:</label>
-    <select name="fever" id="fever">
-        <option value="no">No</option>
-        <option value="yes">Yes</option>
-    </select>
-    <br>
-    <label for="cough">Cough:</label>
-    <select name="cough" id="cough">
-        <option value="no">No</option>
-        <option value="yes">Yes</option>
-    </select>
-    <br>
-    <label for="tired">Fatigue:</label>
-    <select name="tired" id="tired">
-        <option value="no">No</option>
-        <option value="yes">Yes</option>
-    </select>
-    <br>
-    <label for="breathing">Breathing Problems:</label>
-    <select name="breathing" id="breathing">
-        <option value="no">No</option>
-        <option value="yes">Yes</option>
-    </select>
-    <br>
-    <label for="chest-pain">Pain in Chest:</label>
-    <select name="chest-pain" id="chest-pain">
-        <option value="no">No</option>
-        <option value="yes">Yes</option>
-    </select>
-    <br>
-    <label for="heart-disease">Heart Diseases:</label>
-    <select name="heart-disease" id="heart-disease">
-        <option value="no">No</option>
-        <option value="yes">Yes</option>
-    </select>
-    <br>
-    <label for="lung-disease">Lung Diseases:</label>
-    <select name="lung-disease" id="lung-disease">
-        <option value="no">No</option>
-        <option value="yes">Yes</option>
-    </select>
-    <br>
-    <button id="submit">Submit</button>
-    <br>
-    <p id="result"></p>
-</body>
+<div class ="text-center">
+		<img src="../static/assests/covstats.png" style="width: 150px; height: 150px;">
+</div>
+			<div style="margin-left:80px">
+			<h2 style="line-height: 46px; font-family:Circular Std Medium; font-style: normal; font-weight: bold; font-size: 48px;">Select Symptoms you feel</h2>
+			<br><br>
+			<table>
+				<tr><td><input type="checkbox" name="fever" id="fever" class="checkbox" style="width: 19px; height: 19px;"/><label for="fever" class="css-label" style="padding-left: 10px; font-size: 36px; font-family: Circular Std Medium; font-style: normal;">High Temperature</label><br></td></tr>
+				<tr><td></td></tr>
+				<tr><td></td></tr>
+				<tr><td></td></tr>
+				<tr><td></td></tr>
+				<tr><td></td></tr>
+				<tr><td><input type="checkbox" name="cough" id="cough" class="css-checkbox" style="width: 19px; height: 19px;"/><label for="cough" class="css-label"  style="padding-left: 10px; font-size: 36px; font-family: Circular Std Medium; font-style: normal;">Cough</label></td></tr>
+				<tr><td></td></tr>
+				<tr><td></td></tr>
+				<tr><td></td></tr>
+				<tr><td></td></tr>
+				<tr><td></td></tr>
+				<tr><td><input type="checkbox" name="tired" id="tired" class="css-checkbox" style="width: 19px; height: 19px;" /><label for="tired" class="css-label"  style="padding-left: 10px; font-size: 36px; font-family: Circular Std Medium; font-style: normal;">Fatigue</label></td></tr>
+				<tr><td></td></tr>
+				<tr><td></td></tr>
+				<tr><td></td></tr>
+				<tr><td></td></tr>
+				<tr><td></td></tr>
+				<tr><td><input type="checkbox" name="breathing" id="breathing" class="css-checkbox" style="width: 19px; height: 19px;"/><label for="breathing" class="css-label"  style="padding-left: 10px; font-size: 36px; font-family: Circular Std Medium; font-style: normal;">Breathing problems</label></td></tr>
+				<tr><td></td></tr>
+				<tr><td></td></tr>
+				<tr><td></td></tr>
+				<tr><td></td></tr>
+				<tr><td></td></tr>
+				<tr><td><input type="checkbox" name="chest-pain" id="chest-pain" class="css-checkbox" style="width: 19px; height: 19px;"/><label for="chest-pain" class="css-label"  style="padding-left: 10px; font-size: 36px; font-family: Circular Std Medium; font-style: normal;">Chest pain</label></td></tr>
+				<tr><td></td></tr>
+				<tr><td></td></tr>
+				<tr><td></td></tr>
+				<tr><td></td></tr>
+				<tr><td></td></tr>
+				<tr><td><input type="checkbox" name="heart-disease" id="heart-disease" class="css-checkbox" style="width: 19px; height: 19px;"/><label for="heart-disease" class="css-label"  style="padding-left: 10px; font-size: 36px; font-family: Circular Std Medium; font-style: normal;">Heart disease</label></td></tr>
+				<tr><td></td></tr>
+				<tr><td></td></tr>
+				<tr><td></td></tr>
+				<tr><td></td></tr>
+				<tr><td></td></tr>
+				<tr><td><input type="checkbox" name="lung-disease" id="lung-disease" class="css-checkbox" style="width: 19px; height: 19px;"/><label for="lung-disease" class="css-label"  style="padding-left: 10px; font-size: 36px; font-family: Circular Std Medium; font-style: normal;">Lung disease</label></td></tr>
+            </table>
+            </div>
+			<div>
+			<button id ="submit" class="text-center" style="width: 287px; height: 84px;left: 620px; top: 700px ;position: absolute; background-color: #F86767; color: antiquewhite; border-color: #F86767; border-radius: 50px; padding-top: 20px;">
+				<p style="font-size: 36px; font-family: Circular Std Medium; line-height: 46px;">CHECK</p>
+			</button>
+			</div>
+            <br><br><br><br><br>
+			<div class="text-center">
+				<p style="font-size: 48px; line-height: 61px; font-weight: 450; font-family: Circular Std Medium; font-style: normal; text-decoration: underline;">Report</p>
+	
+				<p id="result" style="font-size: 36px; font-family: Circular Std Medium; font-style: normal;">Check your Report</p>
+		</div>
+		</div>
+	</body>
 </html>
