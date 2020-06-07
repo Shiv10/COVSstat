@@ -73,11 +73,11 @@ window.addEventListener("load", () =>{
                 console.log( data);
                 if(data == '0'){
                     result.style.color = "#73CD71"
-                    result.innerHTML = "Keep Calm, you're safe";
+                    result.innerHTML = "Keep Calm, you're free of Corona Virus";
                 }
                 if(data == '1'){
                     result.style.color = "#F77F4C"
-                    result.innerHTML = "Stay alert, you migh be in danger";
+                    result.innerHTML = "Stay alert, you might be in danger";
                 }
                 if(data == '2'){
                     result.style.color = "#B30C0B"
