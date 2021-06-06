@@ -21,6 +21,6 @@ app.listen(3000, () => {
     console.log('Server started on port 3000!');
 });
 
-ngrok.connect(3000).then((url) =>{
+ngrok.connect(3000).then((url) => {
     console.log(url)
-}); 
+});

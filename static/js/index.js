@@ -1,4 +1,4 @@
-window.addEventListener("load", () =>{
+window.addEventListener("load", () => {
     const fever = document.getElementById("fever");
     const cough = document.getElementById("cough");
     const tired = document.getElementById("tired");
@@ -6,52 +6,52 @@ window.addEventListener("load", () =>{
     const chest = document.getElementById("chest-pain");
     const heart = document.getElementById("heart-disease");
     const lung = document.getElementById("lung-disease");
-    const result =  document.getElementById("result")
+    const result = document.getElementById("result")
 
     const button = document.getElementById("submit");
 
     let count = 0;
 
     button.addEventListener("click", () => {
-        if(count == 1) return;
+        if (count == 1) return;
         let temp = 0;
         let co = 0;
         let f = 0;
         let br = 0;
-        let cp =0;
+        let cp = 0;
         let hd = 0
         let ld = 0;
 
-        if (fever.checked){
-             temp =  1
+        if (fever.checked) {
+            temp = 1
         }
 
-        if (cough.checked){
-            co =  1
+        if (cough.checked) {
+            co = 1
         }
 
-       if (tired.checked){
-            f =  1
+        if (tired.checked) {
+            f = 1
         }
 
-       if (breathing.checked){
-            br =  1
+        if (breathing.checked) {
+            br = 1
         }
 
-        if (chest.checked){
-            cp =  1
+        if (chest.checked) {
+            cp = 1
         }
 
-        if (heart.checked){
-            hd =  1
+        if (heart.checked) {
+            hd = 1
         }
 
-        if (lung.checked){
-            ld =  1
+        if (lung.checked) {
+            ld = 1
         }
 
 
-        const data = {
+        const d = {
             temperature: temp,
             cough: co,
             fatigue: f,
@@ -60,26 +60,26 @@ window.addEventListener("load", () =>{
             heartDisease: hd,
             lungDisease: ld,
         }
-        console.log(data);
+        console.log(d);
 
         count = 1;
         $.ajax({
             type: 'POST',
             url: '/predict',
-            data: data,
+            data: d,
             dataType: 'text',
-            success: (data) =>{
-                data = data.slice(1,2)
-                console.log( data);
-                if(data == '0'){
+            success: (data) => {
+                data = data.slice(1, 2)
+                console.log(data);
+                if (data == '0') {
                     result.style.color = "#73CD71"
                     result.innerHTML = "Keep Calm, you're free of Corona Virus";
                 }
-                if(data == '1'){
+                if (data == '1') {
                     result.style.color = "#F77F4C"
                     result.innerHTML = "Stay alert, you might be in danger";
                 }
-                if(data == '2'){
+                if (data == '2') {
                     result.style.color = "#B30C0B"
                     result.innerHTML = "High risk, report to authorities as soon as possible.";
                 }
